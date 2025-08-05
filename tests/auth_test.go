@@ -7,11 +7,11 @@ import (
 )
 
 func TestGetAPIKey(t *testing.T) {
-	header2 := http.Header{}
-	header2.Set("Authorization", "ApiKey ABCDEFGH")
-
 	header1 := http.Header{}
-	header1.Set("Authorization", "ABCDEFGH")
+	header1.Set("Authorization", "ApiKey ABCDEFGH")
+
+	header2 := http.Header{}
+	header2.Set("Authorization", "ABCDEFGH")
 
 	tests := map[string]struct {
 		input     http.Header

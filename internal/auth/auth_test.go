@@ -1,7 +1,6 @@
-package tests
+package auth
 
 import (
-	"github.com/bootdotdev/learn-cicd-starter/internal/auth"
 	"net/http"
 	"testing"
 )
@@ -32,7 +31,7 @@ func TestGetAPIKey(t *testing.T) {
 
 	for name, tc := range tests {
 		t.Run(name, func(t *testing.T) {
-			apiKey, err := auth.GetAPIKey(tc.input)
+			apiKey, err := GetAPIKey(tc.input)
 			if (err != nil) != tc.wantError {
 				t.Errorf("GetAPIKey() error = %v, wantError = %v", err, tc.wantError)
 			}
